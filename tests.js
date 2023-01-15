@@ -60,4 +60,15 @@ let interpolatedNumLevelsAsc = "ADD(NUM_LEVELS_ASC([square_footage], 1000=5/ 200
 let resultTwelve = parseFormula(interpolatedNumLevelsAsc, {square_footage: 1800})
 test(resultTwelve, 11, "Interpolated Ascending Levels Test")
 
-let testThirteen = ""
+let testThirteen = `
+    ADD(
+        10,
+        SWITCH([pest_name],
+            ants=1/
+            spiders=2/
+            rodents=4/
+        )
+    )
+`
+let resultThirteen = parseFormula(testThirteen, {pest_name: 'ants'})
+test(resultThirteen, 11, "Adding tabs and indentation")
