@@ -72,3 +72,17 @@ let testThirteen = `
 `
 let resultThirteen = parseFormula(testThirteen, {pest_name: 'ants'})
 test(resultThirteen, 11, "Adding tabs and indentation")
+
+let testFourteen = "MULTIPLY(2, -3)"
+let resultFourteen = parseFormula(testFourteen, {})
+test(resultFourteen, -6, "Negative numbers")
+
+//testing negative numbers in NUM_LEVELS_ASC
+let testFifteen = "NUM_LEVELS_ASC(-3000, -4000=5/ -3000=10/ -2000=15/ -1000=20/)"
+let resultFifteen = parseFormula(testFifteen, {})
+test(resultFifteen, 10, "Negative numbers in NUM_LEVELS_ASC")
+
+//testing negative numbers in NUM_LEVELS_DESC
+let testSixteen = "NUM_LEVELS_DESC(-3000, -4000=5/ -3000=10/ -2000=15/ -1000=20/)"
+let resultSixteen = parseFormula(testSixteen, {})
+test(resultSixteen, 10, "Negative numbers in NUM_LEVELS_DESC")
