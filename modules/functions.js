@@ -7,7 +7,9 @@ const functions = [
     "SWITCH", 
     "NUM_LEVELS_ASC", 
     "NUM_LEVELS_DESC",
-    "FLOOR"
+    "FLOOR",
+    "ABS",
+    "ROUND"
 ]
 
 module.exports = functions

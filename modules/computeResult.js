@@ -1,4 +1,4 @@
-const { ADD, SUBTRACT, MULTIPLY, DIVIDE, EXP, NUM_LEVELS, SWITCH, FLOOR } = require('./operations')
+const { ADD, SUBTRACT, MULTIPLY, DIVIDE, EXP, NUM_LEVELS, SWITCH, FLOOR, ABS, ROUND } = require('./operations')
 
 function computeResult(operation, args) {
     switch (operation) {
@@ -20,6 +20,10 @@ function computeResult(operation, args) {
             return NUM_LEVELS(args, false)
         case "FLOOR":
             return FLOOR(args)
+        case "ABS":
+            return ABS(args)
+        case "ROUND":
+            return ROUND(args)
         default:
             return null
     }

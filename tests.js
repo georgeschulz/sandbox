@@ -100,3 +100,33 @@ test(resultEighteen, 3, "Floor function")
 let testNineteen = "ADD(FLOOR(2.5, 0), 1)"
 let resultNineteen = parseFormula(testNineteen, {})
 test(resultNineteen, 3, "Floor function in nested functions")
+
+//simple test for absolute value functions, ABS with parameter 2 = 0
+let testTwenty = "ABS(-2, 0)"
+let resultTwenty = parseFormula(testTwenty, {})
+test(resultTwenty, 2, "Absolute value function")
+
+//simple test for absolute value functions, ABS with parameter 2 = 1
+let testTwentyOne = "ABS(-2, 1)"
+let resultTwentyOne = parseFormula(testTwentyOne, {})
+test(resultTwentyOne, -2, "Absolute value function with negative number")
+
+//test absolute value function in nested functions
+let testTwentyTwo = "ADD(ABS(-2, 0), 1)"
+let resultTwentyTwo = parseFormula(testTwentyTwo, {})
+test(resultTwentyTwo, 3, "Absolute value function in nested functions")
+
+//test the round function with parameter 2 = 0
+let testTwentyThree = "ROUND(2.5, 0)"
+let resultTwentyThree = parseFormula(testTwentyThree, {})
+test(resultTwentyThree, 3, "Round function")
+
+//test the round function with parameter 2 = 2 for higher precision
+let testTwentyFour = "ROUND(2.555, 2)"
+let resultTwentyFour = parseFormula(testTwentyFour, {})
+test(resultTwentyFour, 2.56, "Round function")
+
+//test the round function in nested functions
+let testTwentyFive = "ADD(ROUND(2.555, 2), 1)"
+let resultTwentyFive = parseFormula(testTwentyFive, {})
+test(resultTwentyFive, 3.56, "Round function in nested functions")

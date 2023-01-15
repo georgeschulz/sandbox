@@ -114,6 +114,21 @@ function FLOOR(values) {
     }
 }
 
+function ABS(values) {
+    if(values[1] == 1) {
+        return Math.abs(values[0]) * -1
+    } else {
+        return Math.abs(values[0])
+    }
+}
+
+function ROUND(values) {
+    let num = values[0]
+    let precision = values[1]
+    let multiplier = Math.pow(10, precision || 0)
+    return Math.round(num * multiplier) / multiplier
+}
+
 module.exports = {
     ADD,
     DIVIDE,
@@ -122,5 +137,7 @@ module.exports = {
     EXP,
     NUM_LEVELS,
     SWITCH,
-    FLOOR
+    FLOOR,
+    ABS,
+    ROUND
 }
