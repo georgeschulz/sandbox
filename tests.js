@@ -44,10 +44,10 @@ let resultEightB = parseFormula(testEight, {current_warranty: 'ETM', current_pri
 test(resultEightB, (100) + ((233-150)/6), "Switch with other operations")
 
 let testNine = "ADD(MULTIPLY(0.005, [square_footage]), 75)"
-let resultNine = parseFormula(testNine, {square_footage : 500})
-test(resultNine, 275, "Decimals")
+let resultNine = parseFormula(testNine, {square_footage : 2000})
+test(resultNine, (0.005 * 2000) + 75, "Decimals")
+
 
 let testTen = "NUM_LEVELS_ASC(2499, 1000=5/ 2000=10/ 3000=15/ 4000=20/)"
 let resultTen = parseFormula(testTen, {})
 test(resultTen, 15, "Aschending Levels Test")
-

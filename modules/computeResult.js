@@ -12,6 +12,8 @@ function computeResult(operation, args) {
             return DIVIDE(args)
         case "EXP":
             return EXP(args)
+        case "SWITCH":
+            return SWITCH(args)
         case "NUM_LEVELS_ASC":
             return NUM_LEVELS(args, true)
         case "NUM_LEVELS_DESC":
