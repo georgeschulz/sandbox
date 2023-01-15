@@ -51,3 +51,11 @@ test(resultNine, (0.005 * 2000) + 75, "Decimals")
 let testTen = "NUM_LEVELS_ASC(2100, 1000=5/ 2000=10/ 3000=15/ 4000=20)"
 let resultTen = parseFormula(testTen, {})
 test(resultTen, 15, "Ascending Levels Test")
+
+let testEleven = "NUM_LEVELS_DESC(3001, 4000=5/ 3000=10/ 2000=15/ 1000=20)"
+let resultEleven = parseFormula(testEleven, {})
+test(resultEleven, 10, "Descending Levels Test")
+
+let interpolatedNumLevelsAsc = "ADD(NUM_LEVELS_ASC([square_footage], 1000=5/ 2000=10/ 3000=15/ 4000=20), 1)"
+let resultTwelve = parseFormula(interpolatedNumLevelsAsc, {square_footage: 1800})
+test(resultTwelve, 11, "Interpolated Ascending Levels Test")
