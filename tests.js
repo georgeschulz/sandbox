@@ -1,5 +1,6 @@
 const test = require('./modules/test')
 const parseFormula = require('./parser')
+const Service = require('./serviceClass')
 
 let testTwo = "ADD(3, 4)"
 let resultTwo = parseFormula(testTwo, {})
@@ -130,3 +131,24 @@ test(resultTwentyFour, 2.56, "Round function")
 let testTwentyFive = "ADD(ROUND(2.555, 2), 1)"
 let resultTwentyFive = parseFormula(testTwentyFive, {})
 test(resultTwentyFive, 3.56, "Round function in nested functions")
+
+const all = new Service(
+    "All",
+    "Bi-Monthly",
+    ["Service", "Monthly", "Annual Prepay", "Quarterly"],
+    "SWITCH([severity], Low=50/ Medium=100/ High=150/)",
+    "ADD(SWITCH([current_warranty], ANR=75/ EAR=75/ WTR=75/ PER=75/ PTR=75/ ETM=100/ ATM=100/), DIVIDE(SUBTRACT([current_price], 150), 6))",
+    [],
+    0.05
+)
+
+let allPricingExample = all.calculatePrice({
+    severity: 'High',
+    current_price: 200,
+    current_warranty: 'ANR'
+})
+
+
+test(allPricingExample.contractValue, 566.6666666666666, "All Service Pricing Example")
+test(allPricingExample.options.find(o => o.name === "Monthly").billingAmount, 41.666666666666664, "All Service Pricing Example")
+test(allPricingExample.options.find(o => o.name === "Annual Prepay").billingAmount, 475, "All Service Pricing Example")
