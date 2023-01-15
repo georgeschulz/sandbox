@@ -86,3 +86,17 @@ test(resultFifteen, 10, "Negative numbers in NUM_LEVELS_ASC")
 let testSixteen = "NUM_LEVELS_DESC(-3000, -4000=5/ -3000=10/ -2000=15/ -1000=20/)"
 let resultSixteen = parseFormula(testSixteen, {})
 test(resultSixteen, 10, "Negative numbers in NUM_LEVELS_DESC")
+
+//testing floor function
+let testSeventeen = "FLOOR(2.5, 0)"
+let resultSeventeen = parseFormula(testSeventeen, {})
+test(resultSeventeen, 2, "Floor function")
+
+let testEighteen = "FLOOR(2.5, 1)"
+let resultEighteen = parseFormula(testEighteen, {})
+test(resultEighteen, 3, "Floor function")
+
+//test floor in nested functions using the 0 parameter for position 2
+let testNineteen = "ADD(FLOOR(2.5, 0), 1)"
+let resultNineteen = parseFormula(testNineteen, {})
+test(resultNineteen, 3, "Floor function in nested functions")

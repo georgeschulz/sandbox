@@ -106,6 +106,14 @@ function SWITCH(values) {
     }
 }
 
+function FLOOR(values) {
+    if(values[1] == 0) {
+        return Math.floor(values[0])
+    } else {
+        return Math.ceil(values[0])
+    }
+}
+
 module.exports = {
     ADD,
     DIVIDE,
@@ -113,5 +121,6 @@ module.exports = {
     MULTIPLY,
     EXP,
     NUM_LEVELS,
-    SWITCH
+    SWITCH,
+    FLOOR
 }

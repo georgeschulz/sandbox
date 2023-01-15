@@ -1,5 +1,5 @@
 function canSolve(args, op) {
-    if (op == "ADD" || op == "SUBTRACT" || op == "MULTIPLY" || op == "DIVIDE" || op == "EXP") {
+    if (op == "ADD" || op == "SUBTRACT" || op == "MULTIPLY" || op == "DIVIDE" || op == "EXP" || op == "FLOOR") {
         let solved = true
         for (let i = 0; i < args.length; i++) {
             if (typeof args[i] !== "number") {
