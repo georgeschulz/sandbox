@@ -1,10 +1,13 @@
 function parseType(arg) {
     if(arg.includes("(")) {
-        return arg
-    } else if(/^[0-9.]+$/.test(arg)) {
-        return Number(arg)
+        return arg;
     } else {
-        return arg
+        var number = Number(arg);
+        if (!isNaN(number)) {
+            return number;
+        } else {
+            return arg;
+        }
     }
 }
 

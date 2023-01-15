@@ -1,5 +1,5 @@
 function annotateFunctionStart(formula, startCharToAppend, endCharToAppend) {
-    let formulaList = ["ADD", "SUBTRACT", "MULTIPLY", "DIVIDE", "EXP", "NUM_LEVELS", "SWITCH"]
+    let formulaList = ["ADD", "SUBTRACT", "MULTIPLY", "DIVIDE", "EXP", "SWITCH", "NUM_LEVELS_ASC", "NUM_LEVELS_DESC"]
     let newValuesForFormula = {}
     formulaList.forEach((formula) => {
         newValuesForFormula[formula] = startCharToAppend + formula + endCharToAppend

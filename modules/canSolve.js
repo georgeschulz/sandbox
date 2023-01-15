@@ -7,14 +7,13 @@ function canSolve(args, op) {
             }
         }
         return solved
-    } else if (op == "SWITCH") {
-        if(!args[0].includes("(")) {
+    } else if (op == "SWITCH" || op == "NUM_LEVELS" || op == "NUM_LEVELS_ASC" || op == "NUM_LEVELS_DESC") {
+        if(!String(args[0]).includes("(")) {
             return true
         } else {
             return false
         }
     }
-
 }
 
 module.exports = canSolve

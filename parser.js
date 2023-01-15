@@ -8,7 +8,6 @@ const computeResult = require('./modules/computeResult')
 const matchOperationInString = require('./modules/matchOperationInString')
 const canSolve = require('./modules/canSolve')
 
-
 function evaluateExpression(annotatedFormula) {
     const i = annotatedFormula.indexOf("(", 0)
     let close = findCloseParanthesis(annotatedFormula, i)

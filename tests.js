@@ -48,6 +48,6 @@ let resultNine = parseFormula(testNine, {square_footage : 2000})
 test(resultNine, (0.005 * 2000) + 75, "Decimals")
 
 
-let testTen = "NUM_LEVELS_ASC(2499, 1000=5/ 2000=10/ 3000=15/ 4000=20/)"
+let testTen = "NUM_LEVELS_ASC(2100, 1000=5/ 2000=10/ 3000=15/ 4000=20)"
 let resultTen = parseFormula(testTen, {})
-test(resultTen, 15, "Aschending Levels Test")
+test(resultTen, 15, "Ascending Levels Test")

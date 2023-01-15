@@ -14,7 +14,6 @@ function DIVIDE(values) {
 }
 
 function SUBTRACT(values) {
-
     let difference = values[0];
     for (let i = 1; i < values.length; i++) {
         difference -= values[i]
@@ -49,12 +48,10 @@ function NUM_LEVELS(values, isAscending = true) {
             }
         })
     
-    
-    
     let found = false;
     let i = 0;
     let max = pairsArray.length;
-    let returnValue = def;
+    let returnValue = 0;
 
     //sort the list based on the direction
     if (isAscending) {
